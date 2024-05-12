@@ -1,9 +1,11 @@
 import React, { Suspense } from 'react';
+import { CameraControls } from './CameraControls.tsx';
 import { Woman } from './Woman.tsx';
 
 export const Experience = () => {
 	return (
 		<>
+			<CameraControls />
 			<group position={[0, -1, 0]}>
 				<Suspense fallback={null}>
 					<Woman />
