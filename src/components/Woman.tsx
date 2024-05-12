@@ -22,6 +22,10 @@ export function Woman(props) {
 		lacesColor,
 		shoesColor,
 		soleColor,
+		morphTargetDictionary,
+		morphTargetInfluences,
+		setMorphTargetDictionary,
+		setMorphTargetInfluences,
 	} = useCharacterCustomization();
 
 	const group = useRef();

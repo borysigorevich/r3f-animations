@@ -9,8 +9,6 @@ export const ColorPicker = ({
 	value: string;
 	label: string;
 }) => {
-	console.log({ value });
-
 	const id = useId();
 
 	return (

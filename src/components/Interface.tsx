@@ -8,13 +8,20 @@ import { cn } from '../utils/cn.ts';
 import { BottomConfigurator } from './BottomConfigurator.tsx';
 import { HeadConfigurator } from './HeadConfigurator.tsx';
 import { TopConfigurator } from './TopConfigurator.tsx';
+import { FaCameraRetro } from 'react-icons/fa';
 
 export const Interface = () => {
 	const { animations, setAnimationIndex, animationIndex } = useCharacterAnimation();
-	const { setCameraMode, cameraMode } = useCharacterCustomization();
+	const { setCameraMode, cameraMode, setTakeScreenshot } = useCharacterCustomization();
 
 	return (
 		<>
+			<FaCameraRetro
+				className={'fixed left-10 top-10 cursor-pointer'}
+				size={32}
+				onClick={() => setTakeScreenshot(true)}
+			/>
+
 			<span className="fixed top-10 right-10 isolate grid rounded-md shadow-sm">
 				<p className="text-xl uppercase font-bold ml-auto">Camera Mode</p>
 				<div className="mt-3">

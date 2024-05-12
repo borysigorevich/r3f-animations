@@ -10,7 +10,13 @@ function App() {
 		<div className={'h-full'}>
 			<CharacterCustomizationContextProvider>
 				<CharacterAnimationContextProvider>
-					<Canvas shadows camera={{ position: [1, 1.5, 2.5], fov: 50 }}>
+					<Canvas
+						shadows
+						camera={{ position: [1, 1.5, 2.5], fov: 50 }}
+						gl={{
+							preserveDrawingBuffer: true,
+						}}
+					>
 						<Experience />
 					</Canvas>
 					<Interface />

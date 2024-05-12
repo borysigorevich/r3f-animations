@@ -30,6 +30,12 @@ const CharacterCustomizationContext = React.createContext({
 	setLacesColor: (lacesColor: string) => {},
 	soleColor: '#ff0',
 	setSoleColor: (soleColor: string) => {},
+	morphTargetDictionary: [],
+	setMorphTargetDictionary: (morphTargetDictionary: []) => {},
+	morphTargetInfluences: [],
+	setMorphTargetInfluences: (morphTargetInfluences: []) => {},
+	takeScreenshot: false,
+	setTakeScreenshot: (takeScreenshot: boolean) => {},
 });
 
 export const CharacterCustomizationContextProvider = ({
@@ -46,6 +52,9 @@ export const CharacterCustomizationContextProvider = ({
 	const [skinColor, setSkinColor] = useState('#ffeeaa');
 	const [lacesColor, setLacesColor] = useState('#aabbff');
 	const [soleColor, setSoleColor] = useState('#ffff00');
+	const [morphTargetDictionary, setMorphTargetDictionary] = useState([]);
+	const [morphTargetInfluences, setMorphTargetInfluences] = useState([]);
+	const [takeScreenshot, setTakeScreenshot] = useState(false);
 
 	return (
 		<CharacterCustomizationContext.Provider
@@ -72,6 +81,12 @@ export const CharacterCustomizationContextProvider = ({
 				setLacesColor,
 				soleColor,
 				setSoleColor,
+				morphTargetDictionary,
+				setMorphTargetDictionary,
+				morphTargetInfluences,
+				setMorphTargetInfluences,
+				takeScreenshot,
+				setTakeScreenshot,
 			}}
 		>
 			{children}

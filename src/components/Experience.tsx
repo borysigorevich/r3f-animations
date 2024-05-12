@@ -1,8 +1,31 @@
-import React, { Suspense } from 'react';
+import { useThree } from '@react-three/fiber';
+import React, { Suspense, useEffect } from 'react';
+import { useCharacterCustomization } from '../context/CharacterCustomizationContextProvider.tsx';
 import { CameraControls } from './CameraControls.tsx';
 import { Woman } from './Woman.tsx';
 
 export const Experience = () => {
+	const { takeScreenshot, setTakeScreenshot } = useCharacterCustomization();
+
+	const canvas = useThree((state) => state.gl.domElement);
+
+	const screenshot = () => {
+		const image = canvas
+			.toDataURL('image/png')
+			.replace('image/png', 'image/octet-stream');
+		const a = document.createElement('a');
+		a.href = image;
+		a.download = 'screenshot.png';
+		a.click();
+		setTakeScreenshot(false);
+	};
+
+	useEffect(() => {
+		if (takeScreenshot) {
+			screenshot();
+		}
+	}, [takeScreenshot]);
+
 	return (
 		<>
 			<CameraControls />
