@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import React from 'react';
+import { CustomCursor } from './components/CustomCursor.tsx';
 import { Experience } from './components/Experience.tsx';
 import { Interface } from './components/Interface.tsx';
 import { CharacterAnimationContextProvider } from './context/CharacterAnimationContextProvider.tsx';
@@ -22,6 +23,7 @@ function App() {
 					<Interface />
 				</CharacterAnimationContextProvider>
 			</CharacterCustomizationContextProvider>
+			<CustomCursor />
 		</div>
 	);
 }

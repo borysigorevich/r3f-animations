@@ -5,9 +5,15 @@
 @tailwind utilities;
 
 @layer base {
+
+    * {
+        cursor: none !important;
+    }
+
     html, body, #root {
         height: 100%;
         font-family: 'Poppins', sans-serif;
         user-select: none;
     }
+
 }
